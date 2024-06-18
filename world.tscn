@@ -1,6 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgu2s4aowshyx"]
+[gd_scene load_steps=13 format=3 uid="uid://dgu2s4aowshyx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_agoau"]
+[ext_resource type="Texture2D" uid="uid://6c2ere7hqbq4" path="res://models/696.jpg" id="1_onyi8"]
+[ext_resource type="PackedScene" uid="uid://btuhs45ix5xit" path="res://models/crypt/crypt-large.glb" id="3_y6eaw"]
+[ext_resource type="PackedScene" uid="uid://bv6l4ejmel50v" path="res://models/crypt/crypt.glb" id="4_tohmx"]
+[ext_resource type="PackedScene" uid="uid://h485rt2lkq3t" path="res://models/crypt/crypt-large-roof.glb" id="5_f2bku"]
+[ext_resource type="PackedScene" uid="uid://bj1xiq11e7hyw" path="res://Scenes/crypt_2.tscn" id="6_durs7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5r6r5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,21 +21,13 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l1m1"]
-albedo_color = Color(0.431373, 0.741176, 0.458824, 1)
+albedo_texture = ExtResource("1_onyi8")
+uv1_triplanar = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_flksd"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7wp00"]
 points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22ty3"]
-albedo_color = Color(0.501961, 0, 0.521569, 0.415686)
-metallic = 0.45
-metallic_specular = 0.8
-roughness = 0.93
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4gyt"]
-albedo_color = Color(0.380392, 0.65098, 0.733333, 0.996078)
 
 [node name="world" type="Node3D"]
 
@@ -42,13 +39,13 @@ shadow_enabled = true
 environment = SubResource("Environment_154r4")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0385132, -0.4995, -1.17413)
+transform = Transform3D(1.7116, 0, 0, 0, 0.12973, 0, 0, 0, 1.82945, 0.0385132, -0.4995, -1.17413)
 material_override = SubResource("StandardMaterial3D_2l1m1")
 use_collision = true
-size = Vector3(33.369, 0.001, 29.495)
+size = Vector3(100, 0.001, 100)
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158212, 0.463938, -0.15596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152402, 0.463938, -0.156949)
 script = ExtResource("1_agoau")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
@@ -60,43 +57,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0395804, 0.646501, 0)
 shape = SubResource("ConvexPolygonShape3D_7wp00")
 
 [node name="head" type="Node3D" parent="player"]
-transform = Transform3D(-0.0110826, 0, 0.999939, 0, 1, 0, -0.999939, 0, -0.0110826, -0.0310884, 1.39105, -0.00680166)
+transform = Transform3D(-0.00810791, 0, 0.694818, 0, 0.667429, 0, -0.731544, 0, -0.00770085, -0.0252035, 1.85741, 0.0131209)
 
 [node name="playercam" type="Camera3D" parent="player/head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161492, 0, -0.0456363)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.175386, 0, 0, 0, 1, 0, 0, 0, 1, 16.7395, -0.0370145, -1.15978)
-use_collision = true
-size = Vector3(1, 1, 29.4915)
+[node name="crypt-large2" parent="." instance=ExtResource("3_y6eaw")]
+transform = Transform3D(-0.998926, 0, 0.0463393, 0, 1, 0, -0.0463393, 0, -0.998926, 1.6252, -0.499435, 7.34766)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(0.393261, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -16.8356, 0.0466717, -0.5074)
-use_collision = true
-size = Vector3(1, 1, 27.9827)
+[node name="crypt2" parent="." instance=ExtResource("4_tohmx")]
+transform = Transform3D(0.999014, 0, 0.0443866, 0, 1, 0, -0.0443866, 0, 0.999014, 3.73707, -0.499434, 6.19816)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.00226956, 0.000821019, 1.00298, -0.00256872, 1.00297, -0.000903708, -0.26579, -0.00970014, -0.00855558, -0.0425287, -0.0407866, -15.7263)
-use_collision = true
-size = Vector3(1, 1, 33.5919)
+[node name="crypt-large-roof2" parent="." instance=ExtResource("5_f2bku")]
+transform = Transform3D(0.99866, 0, -0.0517434, 0, 1, 0, 0.0517434, 0, 0.99866, 1.59837, 0.512934, 7.36323)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(0.00183499, -0.00681013, -0.267429, 8.29826e-05, 1.0087, -0.00257173, 0.3466, -0.000198972, 0.00942888, -0.729525, -0.103401, 12.9325)
-use_collision = true
-size = Vector3(1.24371, 0.943848, 132)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66197, 0.0247966, 1.48133)
-use_collision = true
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7777, 0.288446, 3.67806)
-material_override = SubResource("StandardMaterial3D_22ty3")
-use_collision = true
-size = Vector3(3.34521, 1.47437, 2.43079)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27592, 0.878042, 6.74946)
-material_override = SubResource("StandardMaterial3D_a4gyt")
-use_collision = true
-size = Vector3(1, 2.71204, 1)
+[node name="crypt3" parent="." instance=ExtResource("6_durs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41024, -0.499435, -8.18783)
