@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btuhs45ix5xit"
-path="res://.godot/imported/crypt-large.glb-674840b6bc0093545438400c3d741cf2.scn"
+uid="uid://op1ss75nbghp"
+path="res://.godot/imported/iron-fence.glb-5c2b828ea152d44b0e27e7e283b6c38a.scn"
 
 [deps]
 
-source_file="res://models/crypt/crypt-large.glb"
-dest_files=["res://.godot/imported/crypt-large.glb-674840b6bc0093545438400c3d741cf2.scn"]
+source_file="res://models/graveyard-kit/iron-fence.glb"
+dest_files=["res://.godot/imported/iron-fence.glb-5c2b828ea152d44b0e27e7e283b6c38a.scn"]
 
 [params]
 

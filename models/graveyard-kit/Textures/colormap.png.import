@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6c2ere7hqbq4"
-path.s3tc="res://.godot/imported/696.jpg-066675fc77a09b2b615d4f726bb706b6.s3tc.ctex"
+uid="uid://cpiqp6r0qqqjs"
+path.s3tc="res://.godot/imported/colormap.png-6dd80e2ed6b1de0c3ab27880d2941f25.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/696.jpg"
-dest_files=["res://.godot/imported/696.jpg-066675fc77a09b2b615d4f726bb706b6.s3tc.ctex"]
+source_file="res://models/graveyard-kit/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-6dd80e2ed6b1de0c3ab27880d2941f25.s3tc.ctex"]
 
 [params]
 

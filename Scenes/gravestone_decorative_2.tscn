@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu6q6bgl2lm7s"]
+
+[ext_resource type="PackedScene" uid="uid://dltt56v6kellg" path="res://models/graveyard-kit/gravestone-decorative.glb" id="1_u2uxv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m0i58"]
+points = PackedVector3Array(-0.195, 0, -0.07475, 0.194998, 0, -0.07475, -0.195, 0, 0.07475, -0.195, 0.539476, -0.07475, 0.194998, 0, 0.07475, 0.194998, 0.539476, -0.07475, -0.195, 0.539476, 0.07475, -3.91304e-05, 0.585, -0.07475, 0.194998, 0.539476, 0.07475, -3.91304e-05, 0.585, 0.07475)
+
+[node name="gravestone-decorative2" instance=ExtResource("1_u2uxv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gravestone-decorative" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravestone-decorative/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_m0i58")

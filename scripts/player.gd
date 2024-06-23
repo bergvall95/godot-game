@@ -60,10 +60,10 @@ func _physics_process(delta):
 			velocity.z = direction.z * speed
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
-			velocity.z = lerp(velocity.z, direction.x * speed, delta * 7.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 	else: 
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 2.0)
-		velocity.z = lerp(velocity.z, direction.x * speed, delta * 2.0)
+		velocity.z = lerp(velocity.z, direction.z * speed, delta * 2.0)
 	# head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)

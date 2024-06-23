@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c74tfye5uxmca"]
+
+[ext_resource type="PackedScene" uid="uid://grwlhoncofko" path="res://models/blurch/blurch.glb" id="1_r8psi"]
+
+[node name="Blurch" type="Node3D"]
+
+[node name="blurch" parent="." instance=ExtResource("1_r8psi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231202, 0, 0.406512)

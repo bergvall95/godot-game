@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cf1bjp2lt2s2d"
-path="res://.godot/imported/crypt-small-entrance.glb-d3367401235624da5fde5a986e9b716d.scn"
+uid="uid://diu8w5vm3exqf"
+path="res://.godot/imported/gravestone-cross.glb-2fa38ae77ab5246ecce94da8a6cb4bb8.scn"
 
 [deps]
 
-source_file="res://models/crypt/crypt-small-entrance.glb"
-dest_files=["res://.godot/imported/crypt-small-entrance.glb-d3367401235624da5fde5a986e9b716d.scn"]
+source_file="res://models/graveyard-kit/gravestone-cross.glb"
+dest_files=["res://.godot/imported/gravestone-cross.glb-2fa38ae77ab5246ecce94da8a6cb4bb8.scn"]
 
 [params]
 

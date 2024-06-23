@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://drhm4mhsfn50g"]
+
+[ext_resource type="PackedScene" uid="uid://op1ss75nbghp" path="res://models/graveyard-kit/iron-fence.glb" id="1_jp62i"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p3b8h"]
+points = PackedVector3Array(0.437451, 0.8239, -0.450004, 0.459965, 0.753898, -0.4275, 0.459965, 0.753898, -0.4725, -0.437549, 0.8239, -0.450004, 0.452428, 4.06075e-15, -0.435001, 0.5, 0.0899225, -0.442503, 0.5, 0.623893, -0.442503, -0.460063, 0.753898, -0.4275, 0.5, 0.623893, -0.457501, 0.5, 0.0899225, -0.457501, 0.452428, 4.06075e-15, -0.465003, -0.460063, 0.753898, -0.4725, -0.452525, 4.06075e-15, -0.435001, -0.5, 0.623893, -0.442503, -0.5, 0.0899225, -0.442503, -0.452525, 4.06075e-15, -0.465003, -0.5, 0.0899225, -0.457501, -0.5, 0.623893, -0.457501)
+
+[node name="iron-fence2" instance=ExtResource("1_jp62i")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="iron-fence" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iron-fence/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_p3b8h")

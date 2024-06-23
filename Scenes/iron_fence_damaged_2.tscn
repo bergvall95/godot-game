@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://pisjk2kdcfgt"]
+
+[ext_resource type="PackedScene" uid="uid://d3lhhsmhkslfs" path="res://models/graveyard-kit/iron-fence-damaged.glb" id="1_mb5ro"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mhhk"]
+
+[node name="iron-fence-damaged2" instance=ExtResource("1_mb5ro")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="iron-fence-damaged" index="0"]
+transform = Transform3D(0.888681, 0, 0, 0, 0.731816, 0, 0, 0, 0.535002, 0.0608624, 0.386755, -0.112031)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iron-fence-damaged/StaticBody3D" index="0"]
+transform = Transform3D(1.13025, 0, 0, 0, 1, 0, 0, 0, 0.253416, -0.0723152, 0, -0.628775)
+shape = SubResource("BoxShape3D_1mhhk")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8o6pei0md8ca"]
+
+[ext_resource type="PackedScene" uid="uid://bggq8k2krw46l" path="res://models/graveyard-kit/gravestone-flat-open.glb" id="1_fg7cn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y0ukm"]
+points = PackedVector3Array(-0.106277, 0.0902524, -0.525105, 0.221852, 0.0246143, 0.525105, 0.221852, -0.00820476, 0.525105, -0.221205, -0.00820476, 0.525105, 0.221852, -0.00820476, -0.525105, 0.024914, 0.123071, 0.525105, -0.221205, -0.00820476, -0.525105, 0.024914, 0.123071, -0.525105, -0.204725, 0.0410238, 0.525105, 0.205416, 0.0410238, -0.525105, -0.024223, 0.123071, 0.525105, -0.221205, 0.0246143, -0.525105, 0.106968, 0.0902524, 0.525105, -0.024223, 0.123071, -0.525105, -0.106277, 0.0902524, 0.525105, 0.106968, 0.0902524, -0.525105, 0.205416, 0.0410238, 0.525105, -0.204725, 0.0410238, -0.525105, -0.221205, 0.0246143, 0.525105, 0.221852, 0.0246143, -0.525105)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2pn7l"]
+points = PackedVector3Array(-0.228654, 0.0839223, -0.536275, 0.229007, 0.0829642, 0.54855, 0.223987, 0, 0.536652, 0.229007, 0.0829642, -0.54855, -0.213, 0.252147, 0.488614, 0.211096, 0.2539, -0.495393, -0.228813, 0, 0.536652, -0.228813, 0, -0.536652, 0.211096, 0.2539, 0.495393, -0.213, 0.252147, -0.488614, 0.223987, 0, -0.536652, -0.228654, 0.0839223, 0.536275, -0.215841, 0.151353, -0.529334, -0.215841, 0.151353, 0.529334)
+
+[node name="gravestone-flat-open2" instance=ExtResource("1_fg7cn")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gravestone-flat-open/lid" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravestone-flat-open/lid/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_y0ukm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gravestone-flat-open" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravestone-flat-open/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_2pn7l")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b8hl0q1b5jewq"
-path="res://.godot/imported/crypt-door.glb-c35a3a8fbdc2c624a4fb1aa7edf37c2e.scn"
+uid="uid://bjonjuxlqb248"
+path="res://.godot/imported/gravestone-debris.glb-09154538c0c89497b4100f76369e69fa.scn"
 
 [deps]
 
-source_file="res://models/crypt/crypt-door.glb"
-dest_files=["res://.godot/imported/crypt-door.glb-c35a3a8fbdc2c624a4fb1aa7edf37c2e.scn"]
+source_file="res://models/graveyard-kit/gravestone-debris.glb"
+dest_files=["res://.godot/imported/gravestone-debris.glb-09154538c0c89497b4100f76369e69fa.scn"]
 
 [params]
 

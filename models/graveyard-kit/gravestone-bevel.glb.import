@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://h485rt2lkq3t"
-path="res://.godot/imported/crypt-large-roof.glb-0b7e1df79606ecd89ab5119c78380fb8.scn"
+uid="uid://c38tpvq6t781j"
+path="res://.godot/imported/gravestone-bevel.glb-52fe4753a5ec19ca0c2b567e5d104f78.scn"
 
 [deps]
 
-source_file="res://models/crypt/crypt-large-roof.glb"
-dest_files=["res://.godot/imported/crypt-large-roof.glb-0b7e1df79606ecd89ab5119c78380fb8.scn"]
+source_file="res://models/graveyard-kit/gravestone-bevel.glb"
+dest_files=["res://.godot/imported/gravestone-bevel.glb-52fe4753a5ec19ca0c2b567e5d104f78.scn"]
 
 [params]
 

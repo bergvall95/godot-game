@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b84a0r0cnvgaj"]
+
+[ext_resource type="PackedScene" uid="uid://2i8qdcceg8bm" path="res://models/graveyard-kit/lightpost-single.glb" id="1_8xjsk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i6vay"]
+points = PackedVector3Array(-0.0837659, -0.0104659, -0.0809659, 0.0836881, 1.20341, 0.316737, -0.0837659, 1.20341, 0.316737, 0.0418082, 1.32917, -0.0390389, 0.0836881, -0.0104659, 0.0865086, 0.0836881, -0.0104659, -0.0809659, -0.0418696, 1.32917, -0.0390389, -0.0837659, -0.0104659, 0.0865086, -0.0837659, 0.952165, 0.316737, 0.0836881, 0.952165, 0.316737, -0.0837659, 1.20341, 0.149263, 0.0836881, 1.20341, 0.149263, -0.0418696, 1.30818, 0.27481, -0.0837659, 0.136138, -0.0809659, 0.0418082, 1.30818, 0.27481, 0.0836881, 0.136138, -0.0809659, -0.0418696, 1.32917, 0.0237154, -0.0628014, 0.156988, -0.0809659, 0.0418082, 1.32917, 0.0237154, 0.06274, 0.156988, -0.0809659)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4peps"]
+albedo_color = Color(0.807843, 0.890196, 0, 1)
+emission_enabled = true
+emission = Color(0.937255, 0.831373, 0.0901961, 1)
+emission_energy_multiplier = 3.17
+
+[node name="lightpost-single2" instance=ExtResource("1_8xjsk")]
+
+[node name="lightpost-single" parent="." index="0"]
+transform = Transform3D(0.995276, 0, 0, 0, 0.995276, 0, 0, 0, 0.995276, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lightpost-single" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_i6vay")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1.04723, 0.245219)
+light_energy = 2.293
+light_indirect_energy = 1.853
+light_volumetric_fog_energy = 3.56
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(0.10626, 0, 0, 0, 0.164698, 0, 0, 0, 0.114413, 0, 1.08622, 0.237635)
+material_override = SubResource("StandardMaterial3D_4peps")

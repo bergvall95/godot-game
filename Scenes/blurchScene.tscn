@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://15yk8ewjsvc8"]
+
+[ext_resource type="PackedScene" uid="uid://grwlhoncofko" path="res://models/blurch/blurch.glb" id="1_fltmd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewqy6"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 14.48
+
+[node name="blurch" instance=ExtResource("1_fltmd")]
+
+[node name="Cylinder_001" parent="." index="12"]
+material_override = SubResource("StandardMaterial3D_ewqy6")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cylinder_001" index="0"]
+transform = Transform3D(-0.999256, 0.0373813, 0.00954383, 0.0373728, 0.999301, -0.00107338, -0.00957728, -0.000715901, -0.999954, -0.984059, 1.18293, 0.421855)
+light_energy = 16.0
+light_indirect_energy = 4.879
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 5.05661
+spot_angle = 14.97
