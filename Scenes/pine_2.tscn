@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtrsarr08a3ln"]
+
+[ext_resource type="PackedScene" uid="uid://c5dv7sugkfco1" path="res://models/graveyard-kit/pine.glb" id="1_tutmr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8g48e"]
+radius = 0.3
+
+[node name="pine2" instance=ExtResource("1_tutmr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pine" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pine/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CylinderShape3D_8g48e")

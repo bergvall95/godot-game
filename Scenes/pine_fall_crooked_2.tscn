@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx2yey57gdvgg"]
+
+[ext_resource type="PackedScene" uid="uid://ca8k73ayifk6h" path="res://models/graveyard-kit/pine-fall-crooked.glb" id="1_mkcdf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gmj56"]
+radius = 0.3
+
+[node name="pine-fall-crooked2" instance=ExtResource("1_mkcdf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pine-fall-crooked" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pine-fall-crooked/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_gmj56")
