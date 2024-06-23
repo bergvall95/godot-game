@@ -41,7 +41,6 @@ glow_enabled = true
 fog_light_energy = 1.1
 fog_density = 0.0473
 fog_height_density = 3.1801
-volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.490196, 0.27451, 0.270588, 1)
 volumetric_fog_emission = Color(0.560784, 0.376471, 0.345098, 1)
 
