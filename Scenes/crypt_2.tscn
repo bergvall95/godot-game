@@ -177,7 +177,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.414795, 0.348655, 2.51506)
 [node name="crypt-door" type="Node3D" parent="crypt-door3"]
 
 [node name="door" type="MeshInstance3D" parent="crypt-door3/crypt-door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5bamy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="crypt-door3"]

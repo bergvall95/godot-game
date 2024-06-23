@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr1g3cb8uey77"]
+
+[ext_resource type="PackedScene" uid="uid://mvn8xsox8sal" path="res://models/lighthouse.glb" id="1_40ml0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mql0d"]
+transparency = 4
+albedo_color = Color(1, 1, 1, 0)
+
+[node name="lighthouse" instance=ExtResource("1_40ml0")]
+
+[node name="Water" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_mql0d")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dgu2s4aowshyx"]
+[gd_scene load_steps=33 format=3 uid="uid://dgu2s4aowshyx"]
 
 [ext_resource type="Texture2D" uid="uid://6c2ere7hqbq4" path="res://Textures/696.jpg" id="1_672xj"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_dwkgl"]
@@ -20,6 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://b84a0r0cnvgaj" path="res://Scenes/lightpost_single_2.tscn" id="18_1eiej"]
 [ext_resource type="PackedScene" uid="uid://chasvh4j6v7as" path="res://Scenes/cross_2.tscn" id="19_pchhn"]
 [ext_resource type="PackedScene" uid="uid://dgq1mltq8t2gj" path="res://models/graveyard-kit/candle-multiple.glb" id="20_40hu8"]
+[ext_resource type="PackedScene" uid="uid://cr1g3cb8uey77" path="res://Scenes/lighthouse.tscn" id="21_ge5u1"]
+[ext_resource type="PackedScene" uid="uid://hh26svo6p4sf" path="res://models/graveyard-kit/pine-crooked.glb" id="22_1ub1r"]
+[ext_resource type="PackedScene" uid="uid://ca8k73ayifk6h" path="res://models/graveyard-kit/pine-fall-crooked.glb" id="23_4hhpo"]
+[ext_resource type="PackedScene" uid="uid://pecda7mehrme" path="res://models/graveyard-kit/pine-fall.glb" id="24_tr1d7"]
+[ext_resource type="PackedScene" uid="uid://c5dv7sugkfco1" path="res://models/graveyard-kit/pine.glb" id="25_hgf8o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2tbkx"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,17 +38,18 @@ background_mode = 2
 sky = SubResource("Sky_tk5kd")
 tonemap_mode = 2
 glow_enabled = true
+fog_light_energy = 1.1
+fog_density = 0.0473
+fog_height_density = 3.1801
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
 volumetric_fog_albedo = Color(0.490196, 0.27451, 0.270588, 1)
 volumetric_fog_emission = Color(0.560784, 0.376471, 0.345098, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17ymh"]
 albedo_color = Color(0.854902, 0.815686, 0.682353, 1)
 emission_enabled = true
-emission = Color(0.992157, 0.764706, 0.72549, 1)
-emission_energy_multiplier = 3.5
-ao_enabled = true
+emission = Color(0.956863, 0.929412, 0.447059, 1)
+emission_energy_multiplier = 16.0
 ao_light_affect = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l1m1"]
@@ -824,18 +830,6 @@ transform = Transform3D(-0.997033, 0, 0.0769802, 0, 1, 0, -0.0769802, 0, -0.9970
 [node name="gravestone-round5" parent="cemetery 2" instance=ExtResource("9_aty4v")]
 transform = Transform3D(-0.998329, 0, -0.0578253, 0, 1, 0, 0.0578253, 0, -0.998329, 1.03382, 0.008757, -0.627763)
 
-[node name="iron-fence2" parent="cemetery 2" instance=ExtResource("15_xo41p")]
-transform = Transform3D(0.00436329, 0, 0.499982, 0, 0.5, 0, -0.499982, 0, 0.00436329, -9.38817, 0.0087565, -1.17687)
-
-[node name="iron-fence3" parent="cemetery 2" instance=ExtResource("15_xo41p")]
-transform = Transform3D(0.00436329, 0, 0.499982, 0, 0.5, 0, -0.499982, 0, 0.00436329, -9.38383, 0.0087565, -1.6738)
-
-[node name="iron-fence5" parent="cemetery 2" instance=ExtResource("15_xo41p")]
-transform = Transform3D(0.00436329, 0, 0.499982, 0, 0.5, 0, -0.499982, 0, 0.00436329, -9.36628, 0.0087565, -3.68481)
-
-[node name="iron-fence6" parent="cemetery 2" instance=ExtResource("15_xo41p")]
-transform = Transform3D(0.00436329, 0, 0.499982, 0, 0.5, 0, -0.499982, 0, 0.00436329, -9.36194, 0.0087565, -4.18304)
-
 [node name="iron-fence-damaged2" parent="cemetery 2" instance=ExtResource("16_eb5h1")]
 transform = Transform3D(0.00872658, 0, 0.999964, 0, 1, 0, -0.999964, 0, 0.00872658, -6.63162, 0.00813749, -0.970904)
 
@@ -847,9 +841,6 @@ transform = Transform3D(0.00872658, 0, 0.999964, 0, 1, 0, -0.999964, 0, 0.008726
 
 [node name="iron-fence10" parent="cemetery 2" instance=ExtResource("17_vhmxn")]
 transform = Transform3D(0.00872658, 0, 0.999964, 0, 1, 0, -0.999964, 0, 0.00872658, -6.59005, 0, -4.92515)
-
-[node name="iron-fence-damaged3" parent="cemetery 2" instance=ExtResource("16_eb5h1")]
-transform = Transform3D(0.00436329, 0, 0.499982, 0, 0.5, 0, -0.499982, 0, 0.00436329, -9.35764, 0.026397, -2.16835)
 
 [node name="iron-fence-damaged4" parent="cemetery 2" instance=ExtResource("16_eb5h1")]
 transform = Transform3D(0.00872658, 0, 0.999964, 0, 1, 0, -0.999964, 0, 0.00872658, -6.58841, 0.00813749, -5.92311)
@@ -1043,22 +1034,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82322, -0.139891, 1.70728)
 [node name="road57" parent="cemetery 2/road2" instance=ExtResource("7_illht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19297, -0.139891, 1.70728)
 
-[node name="lightpost-single2" parent="." instance=ExtResource("18_1eiej")]
+[node name="lightpostcontainer" type="Node3D" parent="."]
+
+[node name="lightpost-single2" parent="lightpostcontainer" instance=ExtResource("18_1eiej")]
 transform = Transform3D(-0.163856, 0.0488916, -2.49415, 0, 2.49952, 0.048997, 2.49462, 0.00321138, -0.163825, -2.0799, -0.499436, 13.1876)
 
-[node name="lightpost-single3" parent="." instance=ExtResource("18_1eiej")]
+[node name="lightpost-single3" parent="lightpostcontainer" instance=ExtResource("18_1eiej")]
 transform = Transform3D(-2.49825, 0.00183388, -0.0935536, 0, 2.49952, 0.048997, 0.0935715, 0.0489627, -2.49777, -18.1638, -0.499436, 4.60258)
 
-[node name="lightpost-single4" parent="." instance=ExtResource("18_1eiej")]
+[node name="lightpost-single4" parent="lightpostcontainer" instance=ExtResource("18_1eiej")]
 transform = Transform3D(-0.0590305, -0.0489833, 2.49882, 0, 2.49952, 0.048997, -2.4993, 0.00115692, -0.0590191, -19.8496, -0.499436, -16.7816)
 
-[node name="lightpost-single5" parent="." instance=ExtResource("18_1eiej")]
+[node name="lightpost-single5" parent="lightpostcontainer" instance=ExtResource("18_1eiej")]
 transform = Transform3D(-0.0590305, -0.0489833, 2.49882, 0, 2.49952, 0.048997, -2.4993, 0.00115692, -0.0590191, -8.96913, -0.489662, -34.921)
 
-[node name="lightpost-single6" parent="." instance=ExtResource("18_1eiej")]
+[node name="lightpost-single6" parent="lightpostcontainer" instance=ExtResource("18_1eiej")]
 transform = Transform3D(-0.0356466, 0.048992, -2.49927, -1.59971e-10, 2.49952, 0.048997, 2.49975, 0.000698642, -0.0356399, 2.36954, -0.489662, -16.3087)
 
-[node name="lightpost-single7" parent="." instance=ExtResource("18_1eiej")]
+[node name="lightpost-single7" parent="lightpostcontainer" instance=ExtResource("18_1eiej")]
 transform = Transform3D(0.165772, 0.0488891, -2.49402, -9.35744e-11, 2.49952, 0.048997, 2.4945, -0.00324893, 0.16574, 2.36954, -0.489662, 1.98499)
 
 [node name="graveyard" type="Node3D" parent="."]
@@ -1260,3 +1253,1090 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.280163, -5)
 
 [node name="candle-multiple3" parent="." instance=ExtResource("20_40hu8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.59122, -0.174624, -5.48561)
+
+[node name="wallcontainer" type="Node3D" parent="."]
+
+[node name="Brick-wall12" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, -9.01386)
+
+[node name="Brick-wall13" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, -6.01793)
+
+[node name="Brick-wall14" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, -3.01607)
+
+[node name="Brick-wall15" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 0.00019455)
+
+[node name="Brick-wall16" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 2.99612)
+
+[node name="Brick-wall17" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 5.99799)
+
+[node name="Brick-wall18" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 8.9626)
+
+[node name="Brick-wall19" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 11.9585)
+
+[node name="Brick-wall20" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 14.9604)
+
+[node name="Brick-wall21" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 17.847)
+
+[node name="Brick-wall22" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 20.8429)
+
+[node name="Brick-wall23" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, 23.8448)
+
+[node name="Brick-wall24" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -24.3692, -0.499584, 25.6053)
+
+[node name="Brick-wall25" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -21.3733, -0.499584, 25.6015)
+
+[node name="Brick-wall26" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.3714, -0.499584, 25.5977)
+
+[node name="Brick-wall27" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15.4387, -0.499584, 25.6053)
+
+[node name="Brick-wall28" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -12.4428, -0.499584, 25.6015)
+
+[node name="Brick-wall29" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.44095, -0.499584, 25.5977)
+
+[node name="Brick-wall30" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.54414, -0.499584, 25.6053)
+
+[node name="Brick-wall31" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.54822, -0.499584, 25.6015)
+
+[node name="Brick-wall32" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.546354, -0.499584, 25.5977)
+
+[node name="Brick-wall33" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.66592, -0.499584, 25.6053)
+
+[node name="Brick-wall34" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.66185, -0.499584, 25.6015)
+
+[node name="Brick-wall35" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.66371, -0.499584, 25.5977)
+
+[node name="Brick-wall36" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.5964, -0.499584, 25.6053)
+
+[node name="Brick-wall37" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 13.5923, -0.499584, 25.6015)
+
+[node name="Brick-wall38" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4464, -0.594032, 24.1999)
+
+[node name="Brick-wall39" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4486, -0.594032, 21.3031)
+
+[node name="Brick-wall40" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4391, -0.594032, 18.3071)
+
+[node name="Brick-wall41" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4296, -0.594032, 15.3053)
+
+[node name="Brick-wall42" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4464, -0.594032, 12.3035)
+
+[node name="Brick-wall43" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4486, -0.594032, 9.40664)
+
+[node name="Brick-wall44" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4391, -0.594032, 6.41073)
+
+[node name="Brick-wall45" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 15.4296, -0.594032, 3.40888)
+
+[node name="Brick-wall46" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0.000680797, 0, 3, 0, -0.000680797, 0, 3, 16.493, -0.594032, 1.97836)
+
+[node name="Brick-wall47" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0.000680797, 0, 3, 0, -0.000680797, 0, 3, 19.3899, -0.594032, 1.97989)
+
+[node name="Brick-wall48" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3, 0, 0.000680797, 0, 3, 0, -0.000680797, 0, 3, 22.3858, -0.594032, 1.96974)
+
+[node name="Brick-wall49" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 24.2139, -0.594032, 0.543424)
+
+[node name="Brick-wall50" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 24.2139, -0.594032, -2.45157)
+
+[node name="Brick-wall51" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 24.2139, -0.594032, -5.44408)
+
+[node name="Brick-wall52" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 24.2139, -0.594032, -8.43666)
+
+[node name="Brick-wall53" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 24.2139, -0.594032, -11.4317)
+
+[node name="Brick-wall54" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 24.2139, -0.594032, -14.4242)
+
+[node name="Brick-wall55" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 22.6062, -0.594032, -16.2615)
+
+[node name="Brick-wall56" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 19.6112, -0.594032, -16.2782)
+
+[node name="Brick-wall57" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 16.6187, -0.594032, -16.2948)
+
+[node name="Brick-wall58" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 13.6274, -0.594032, -16.2948)
+
+[node name="Brick-wall59" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -17.3842)
+
+[node name="Brick-wall60" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -20.3842)
+
+[node name="Brick-wall61" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -23.3842)
+
+[node name="Brick-wall62" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -26.3842)
+
+[node name="Brick-wall63" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -29.3842)
+
+[node name="Brick-wall64" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -32.3842)
+
+[node name="Brick-wall65" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -35.3842)
+
+[node name="Brick-wall66" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 12.083, -0.594032, -38.3842)
+
+[node name="Brick-wall67" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 10.583, -0.594032, -40.2784)
+
+[node name="Brick-wall68" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 7.58302, -0.594032, -40.2784)
+
+[node name="Brick-wall69" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 4.58302, -0.594032, -40.2784)
+
+[node name="Brick-wall70" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 1.58302, -0.594032, -40.2784)
+
+[node name="Brick-wall71" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -1.41698, -0.594032, -40.2784)
+
+[node name="Brick-wall72" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -4.41698, -0.594032, -40.2784)
+
+[node name="Brick-wall73" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -7.41698, -0.594032, -40.2784)
+
+[node name="Brick-wall74" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -10.417, -0.594032, -40.2784)
+
+[node name="Brick-wall75" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -38.7784)
+
+[node name="Brick-wall76" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -35.7784)
+
+[node name="Brick-wall77" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -32.7784)
+
+[node name="Brick-wall78" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -29.7784)
+
+[node name="Brick-wall79" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -26.7784)
+
+[node name="Brick-wall80" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -23.7784)
+
+[node name="Brick-wall81" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(3.93403e-07, 0, -3, 0, 3, 0, 3, 0, 3.93403e-07, -12.3218, -0.594032, -20.7784)
+
+[node name="Brick-wall82" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -13.4522, -0.594032, -19.5588)
+
+[node name="Brick-wall83" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -16.4522, -0.594032, -19.5588)
+
+[node name="Brick-wall84" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -19.4522, -0.594032, -19.5588)
+
+[node name="Brick-wall85" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -22.4522, -0.594032, -19.5588)
+
+[node name="Brick-wall86" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -25.4522, -0.594032, -19.5588)
+
+[node name="Brick-wall87" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, -18.0139)
+
+[node name="Brick-wall88" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, -15.0179)
+
+[node name="Brick-wall89" parent="wallcontainer" instance=ExtResource("4_1p2vu")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -25.7973, -0.499584, -12.0161)
+
+[node name="lighthouse" parent="." instance=ExtResource("21_ge5u1")]
+transform = Transform3D(2.1826, 0, -4.49847, 0, 5, 0, 4.49847, 0, 2.1826, -154.759, -2.49944, -57.9984)
+
+[node name="forestcontainer" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -34, -0.50223, 25)
+
+[node name="yforest3" type="Node3D" parent="forestcontainer"]
+
+[node name="pine-crooked2" parent="forestcontainer/yforest3" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/yforest3" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/yforest3" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/yforest3" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/yforest3" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/yforest3" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/yforest3" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/yforest3" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="pine-crooked4" parent="forestcontainer/yforest3" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, -3.75)
+
+[node name="yforest2" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -11.75)
+
+[node name="pine-crooked2" parent="forestcontainer/yforest2" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/yforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/yforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/yforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/yforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/yforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/yforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/yforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="yforest" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, -17.25)
+
+[node name="pine-crooked2" parent="forestcontainer/yforest" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/yforest" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/yforest" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/yforest" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/yforest" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/yforest" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/yforest" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/yforest" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, -18.5)
+
+[node name="pine-crooked2" parent="forestcontainer/xforest" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/xforest" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/xforest" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/xforest" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/xforest" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/xforest" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/xforest" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/xforest" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17, 0, -17.25)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="pine-crooked4" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 8.25)
+
+[node name="pine4" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, -0.25, 3.25)
+
+[node name="pine-fall4" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 9.75)
+
+[node name="pine5" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.25, 0, 11)
+
+[node name="pine-crooked5" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 8.25)
+
+[node name="pine-crooked6" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 7.5)
+
+[node name="pine-crooked7" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 3.25)
+
+[node name="pine-fall5" parent="forestcontainer/doublesquareforest/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 5.75)
+
+[node name="yforest4" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -0.25, 0, -16.25)
+
+[node name="pine-crooked2" parent="forestcontainer/yforest4" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/yforest4" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/yforest4" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/yforest4" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/yforest4" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/yforest4" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/yforest4" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/yforest4" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="doublesquareforest2" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.5, 0, -1.25)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest2"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest2/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest2/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest3" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.5, 0, -7.25)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest3"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest3/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest3"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest3/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest4" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.5, 0, 5.75)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest4"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest4/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest4"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest4/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest5" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 16.4019, 0, 5.11602)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest5"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest5/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest5"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest5/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest6" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, 5.90192, 0, 5.61602)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest6"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest6/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest6"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest6/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest7" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, -0.848076, 0, 5.61602)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest7"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest7/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest7"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest7/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest8" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, -0.848076, 0, -1.13398)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest8"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest8/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="doublesquareforest10" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, 1, -6.84808, 0, -14.384)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest10"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest10/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest10"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest10/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest11" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, 1, -0.348076, 0, -19.134)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest11"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest11/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest11"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest11/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest12" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, 1, 6.65192, 0, -20.884)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest12"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest12/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest12"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest12/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest13" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, 1, 13.9019, 0, -18.884)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest13"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest13/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest13"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest13/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
+
+[node name="doublesquareforest14" type="Node3D" parent="forestcontainer"]
+transform = Transform3D(1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, 1, 19.1519, 0, -13.384)
+
+[node name="yforest5" type="Node3D" parent="forestcontainer/doublesquareforest14"]
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("22_1ub1r")]
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -0.75)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.25)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest14/yforest5" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.25)
+
+[node name="xforest2" type="Node3D" parent="forestcontainer/doublesquareforest14"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.25, 0, -4.75)
+
+[node name="pine-crooked2" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, -4.25)
+
+[node name="pine-fall-crooked2" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -4.75)
+
+[node name="pine-fall2" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="pine2" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.25, -2.5)
+
+[node name="pine-crooked3" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("22_1ub1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.75)
+
+[node name="pine-fall3" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("24_tr1d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -2.75)
+
+[node name="pine3" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("25_hgf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5)
+
+[node name="pine-fall-crooked3" parent="forestcontainer/doublesquareforest14/xforest2" instance=ExtResource("23_4hhpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3.25)
