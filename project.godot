@@ -66,6 +66,10 @@ shoot={
 ]
 }
 
+[rendering]
+
+environment/volumetric_fog/volume_size=256
+
 [shader_globals]
 
 sgt_player_position={
