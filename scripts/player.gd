@@ -7,6 +7,8 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const AIR_CONTROL_MOD = 1.0
+const HIT_STAGGER = 8.0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 var direction = 0.0
@@ -19,7 +21,8 @@ var t_bob= 0.0
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
-
+# signal
+signal player_hit
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -82,4 +85,7 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ) * BOB_AMP
 	return pos
 		
+func hit(dir):
+	emit_signal("player_hit")
+	velocity += dir * HIT_STAGGER
 		

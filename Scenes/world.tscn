@@ -1,6 +1,7 @@
-[gd_scene load_steps=55 format=3 uid="uid://dgu2s4aowshyx"]
+[gd_scene load_steps=56 format=3 uid="uid://dgu2s4aowshyx"]
 
 [ext_resource type="Texture2D" uid="uid://6c2ere7hqbq4" path="res://Textures/696.jpg" id="1_672xj"]
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_cbmik"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_dwkgl"]
 [ext_resource type="PackedScene" uid="uid://hehla4qholfi" path="res://Scenes/brick-wall.tscn" id="4_1p2vu"]
 [ext_resource type="PackedScene" uid="uid://c1sqrm6ttoygw" path="res://Scenes/Brick-wall-end.tscn" id="5_rp143"]
@@ -89,7 +90,7 @@ shader = ExtResource("26_05tac")
 shader_parameter/noise_scale = -0.05
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_ltjr7")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8f34a"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr7h2"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("36_4f15d")
@@ -124,7 +125,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_8f34a"),
+"material": SubResource("ShaderMaterial_hr7h2"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
@@ -144,6 +145,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="world" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50223, 0)
+script = ExtResource("1_cbmik")
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -2479,6 +2481,41 @@ metadata/SimpleGrassTextured = "2.0.3"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31038, -0.499435, -2.1212)
 player_path = NodePath("../../player")
 
+[node name="zombie2" parent="Map" instance=ExtResource("40_xml7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85379, -0.499435, -16.3545)
+player_path = NodePath("../../player")
+
+[node name="zombie3" parent="Map" instance=ExtResource("40_xml7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85379, -0.499435, 1.25282)
+player_path = NodePath("../../player")
+
+[node name="zombie4" parent="Map" instance=ExtResource("40_xml7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2651, -0.499435, 1.25282)
+player_path = NodePath("../../player")
+
+[node name="Spawns" type="Node3D" parent="Map"]
+
+[node name="Spawn" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00757, -0.426887, -0.0522813)
+
+[node name="Spawn1" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2861, -0.426887, -3.15786)
+
+[node name="Spawn2" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4675, -0.426887, -13.9066)
+
+[node name="Spawn3" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67639, -0.426887, -30.5371)
+
+[node name="Spawn4" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1068, -0.426887, -8.75842)
+
+[node name="Spawn5" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9827, -0.426887, -5.63868)
+
+[node name="Spawn6" type="Node3D" parent="Map/Spawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7964, -0.426887, 6.09684)
+
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152402, 0.463938, 3.24599)
 floor_max_angle = 1.05418
@@ -2498,3 +2535,20 @@ transform = Transform3D(-0.00810791, 0, 0.694818, 0, 0.667429, 0, -0.731544, 0, 
 [node name="playercam" type="Camera3D" parent="player/head"]
 transform = Transform3D(1.36689, 0, 3.1665e-08, 0, 1.49829, 0, 0, 0, 1.43914, 0.0161492, 0, -0.0456363)
 current = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HitRect" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = -35.0
+offset_top = -6.0
+offset_right = 1179.0
+offset_bottom = 653.0
+color = Color(0.866667, 0, 0.105882, 0.305882)
+
+[connection signal="player_hit" from="player" to="." method="_on_player_player_hit"]
