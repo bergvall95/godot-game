@@ -4,7 +4,7 @@ const SPEED = 4.0
 const ATTACK_RANGE=2.5
 var player = null 
 var state_machine
-@export var player_path : NodePath
+@export var player_path := "/root/world/Map/NavigationRegion3D/player"
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
