@@ -18,17 +18,24 @@ const BOB_FREQ = 2.0
 const BOB_AMP= 0.03
 var t_bob= 0.0
 
+# fov variables
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
 # signal
 signal player_hit
 
+# Bullets
+var bullet = load("res://Scenes/weapons/bullet.tscn")
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 @onready var head = $head
 @onready var camera = $head/playercam
+@onready var gun_anim = $head/playercam/uziSilencer2/AnimationPlayer
+@onready var gun_barrel = $head/playercam/uziSilencer2/RayCast3D
+@onready var gun_anim2 = $head/playercam/uziSilencer3/AnimationPlayer
+@onready var gun_barrel2 = $head/playercam/uziSilencer3/RayCast3D
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -76,8 +83,23 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
+	if Input.is_action_pressed("shoot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("shoot")
+			gun_anim2.play("shoot")
+			_instantiate_bullet( gun_barrel)
+			_instantiate_bullet( gun_barrel2)
+			
+			
+	
 	move_and_slide()
 	
+
+func _instantiate_bullet( barrel):
+	var instance = bullet.instantiate()
+	instance.position = barrel.global_position
+	instance.transform.basis = barrel.global_transform.basis
+	get_parent().add_child(instance)
 	
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
