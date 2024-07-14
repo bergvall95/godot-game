@@ -22,6 +22,8 @@ var t_bob= 0.0
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
+# player health 
+var health = 10.0
 # signal
 signal player_hit
 
@@ -110,4 +112,8 @@ func _headbob(time) -> Vector3:
 func hit(dir):
 	emit_signal("player_hit")
 	velocity += dir * HIT_STAGGER
+	health -=2
+	if (health < 0):
+		queue_free()
+	
 		

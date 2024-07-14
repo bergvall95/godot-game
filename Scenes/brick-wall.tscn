@@ -47,6 +47,8 @@ points = PackedVector3Array(-0.465704, 0.0218255, -0.5, 0.492026, 0.706349, -0.3
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="brick-wall" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00382841, 0, 0.363215)

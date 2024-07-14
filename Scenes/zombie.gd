@@ -4,6 +4,7 @@ const SPEED = 4.0
 const ATTACK_RANGE=2.5
 var player = null 
 var state_machine
+var health = 6
 @export var player_path := "/root/world/Map/NavigationRegion3D/player"
 
 @onready var nav_agent = $NavigationAgent3D
@@ -47,3 +48,9 @@ func _hit_finished():
 		player.hit(dir);
 		
 	
+
+
+func _on_area_3d_body_part_hit(dam):
+	health -= dam
+	if health <= 0:
+		queue_free()
